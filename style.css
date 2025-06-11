@@ -1,0 +1,244 @@
+/* Variáveis CSS para facilitar a manutenção das cores */
+:root {
+    --primary-color: #0056b3; /* Azul escuro */
+    --secondary-color: #007bff; /* Azul vibrante */
+    --text-color: #333;
+    --light-grey: #f8f8f8;
+    --dark-grey: #333;
+    --white-color: #fff;
+    --accent-color: #28a745; /* Verde para destaque */
+}
+
+/* Reset básico e estilos gerais */
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: var(--light-grey);
+    color: var(--text-color);
+    scroll-behavior: smooth; /* Rolagem suave ao clicar nos links de navegação */
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Cabeçalho */
+header {
+    background-color: var(--dark-grey);
+    color: var(--white-color);
+    padding: 1rem 0;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    position: sticky; /* Cabeçalho fixo no topo */
+    top: 0;
+    z-index: 1000;
+}
+
+header h1 {
+    margin: 0;
+    padding-bottom: 10px;
+    font-size: 2.2em;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex; /* Alinhamento horizontal */
+    justify-content: center;
+    flex-wrap: wrap; /* Quebra de linha em telas menores */
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: var(--white-color);
+    text-decoration: none;
+    font-weight: bold;
+    padding: 5px 0;
+    transition: color 0.3s ease, border-bottom 0.3s ease;
+}
+
+nav ul li a:hover,
+nav ul li a:focus {
+    color: var(--secondary-color);
+    border-bottom: 2px solid var(--secondary-color);
+}
+
+/* Seções de conteúdo */
+.content-section {
+    padding: 40px 0;
+    background-color: var(--white-color);
+    margin-bottom: 20px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
+    border-radius: 8px;
+}
+
+.content-section.grey-bg {
+    background-color: var(--light-grey);
+}
+
+h2 {
+    text-align: center;
+    color: var(--primary-color);
+    margin-bottom: 30px;
+    font-size: 2.5em;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+h2::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background-color: var(--accent-color);
+}
+
+h3 {
+    color: var(--secondary-color);
+    font-size: 1.8em;
+    margin-top: 25px;
+}
+
+/* Seção Hero (introdução) */
+.hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('hero-bg.jpg') no-repeat center center/cover; /* Adicione uma imagem de fundo para o hero */
+    color: var(--white-color);
+    text-align: center;
+    padding: 80px 0;
+    margin-bottom: 20px;
+}
+
+.hero h2 {
+    color: var(--white-color);
+    font-size: 3em;
+    margin-bottom: 15px;
+}
+
+.hero h2::after {
+    background-color: var(--white-color);
+}
+
+.hero p {
+    font-size: 1.3em;
+    max-width: 700px;
+    margin: 0 auto 30px auto;
+}
+
+.section-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-top: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos para as features (pontos de importância) */
+.feature {
+    background-color: var(--white-color);
+    padding: 25px;
+    margin-bottom: 20px;
+    border-left: 5px solid var(--primary-color);
+    border-radius: 5px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease;
+}
+
+.feature:hover {
+    transform: translateY(-5px);
+}
+
+.feature ul {
+    list-style: disc;
+    margin-left: 20px;
+    margin-top: 10px;
+}
+
+.feature ul li {
+    margin-bottom: 5px;
+}
+
+/* Links */
+a {
+    color: var(--secondary-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--primary-color);
+    text-decoration: underline;
+}
+
+/* Rodapé */
+footer {
+    background-color: var(--dark-grey);
+    color: var(--white-color);
+    text-align: center;
+    padding: 25px 0;
+    margin-top: 30px;
+}
+
+footer .heart {
+    color: #e74c3c; /* Coração vermelho */
+}
+
+/* Responsividade Básica */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 1.8em;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li {
+        margin: 5px 0;
+    }
+
+    .hero h2 {
+        font-size: 2.2em;
+    }
+
+    .hero p {
+        font-size: 1.1em;
+    }
+
+    h2 {
+        font-size: 2em;
+    }
+
+    h3 {
+        font-size: 1.5em;
+    }
+
+    .content-section {
+        padding: 20px 0;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.5em;
+    }
+
+    .container {
+        padding: 0 10px;
+    }
+
+    .hero h2 {
+        font-size: 1.8em;
+    }
+}
